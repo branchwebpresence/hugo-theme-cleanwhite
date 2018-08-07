@@ -1,9 +1,6 @@
 <head>
-    <meta name="google-site-verification" content="9vIieCe-Qpd78QOmBl63rGtIVbhY6sYyuxX3j8XWBA4" />
-    <meta name="baidu-site-verification" content="LRrmH41lz7" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ if .Params.description }}
     <meta name="description" content="{{ .Params.description }}">
@@ -11,6 +8,13 @@
     <meta name="description" content="{{ .Site.Params.description }}">
     {{ end }}
     <meta name="keyword"  content="{{ .Site.Params.keyword }}">
+
+    {{ with .Site.Params.verification }}{{ with .google }}
+    <meta name="google-site-verification" content="{{ . }}" />{{ end }}{{ with .baidu }}
+    <meta name="baidu-site-verification" content="{{ . }}" />{{ end }}{{ with .bing }}
+    <meta name="bing-site-verification" content="{{ . }}" />{{ end }}
+    {{ end }}
+
     <link rel="shortcut icon" href="{{ "img/favicon.ico" | absURL }}">
 
     <title>{{ if .Title }}{{ .Title }}-{{ .Site.Params.SEOTitle }}{{ else }}{{ .Site.Params.SEOTitle }}{{ end }}</title>

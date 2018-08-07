@@ -47,6 +47,11 @@ home = ["HTML", "RSS", "Algolia"]
   disqus_proxy = ""
   disqus_site = ""
 
+  [params.verification]
+    #google = ""
+    #baidu = ""
+    #bing = ""
+
   [params.social]
   rss            = true 
   email          = "youemail@gmail.com"
